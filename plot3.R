@@ -1,3 +1,5 @@
+
+library(dplyr)
 library(lubridate)
 
 # consumo <- read.csv("household_power_consumption.txt", sep = ";", header = TRUE, na.strings = "?", stringsAsFactors = FALSE)
