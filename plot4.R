@@ -11,6 +11,7 @@ consumo_1 <- mutate(consumo_original, date_time = dmy_hms(paste(consumo_original
 consumo_2 <- filter(consumo_1, date_time >= "2007-02-01 00:00:00" & date_time < "2007-02-03 00:00:00")
 
 png(file = "plot4.png", bg = "transparent")
+
 par(mfrow = c(2,2))
 plot(consumo_2$date_time, consumo_2$Global_active_power, type = "n", ylab = "Global Active Power", xlab = "")
 lines(consumo_2$date_time, consumo_2$Global_active_power)
@@ -26,7 +27,7 @@ lines(consumo_2$date_time, consumo_2$Sub_metering_2, col = "red")
 lines(consumo_2$date_time, consumo_2$Sub_metering_3, col = "blue")
 
 s <- summary(consumo_2$date_time)
-legend(x = s[4], y = 41, lty = c(1,1,1), col = c("black", "blue", "red"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), box.lwd = 0, ncol = 1, text.width = 45000)
+legend(x = s[4], y = 41, lty = c(1,1,1), col = c("black", "blue", "red"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), box.lwd = 0, ncol = 1, cex = 0.6, pt.cex = 0.5)
 
 
 plot(consumo_2$date_time, consumo_2$Global_reactive_power, type="n", ylab = "Global_active_power", xlab = "datetime")
