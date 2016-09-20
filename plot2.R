@@ -9,7 +9,7 @@ consumo_1 <- mutate(consumo_original, date_time = dmy_hms(paste(consumo_original
 consumo_2 <- filter(consumo_1, date_time >= "2007-02-01 00:00:00" & date_time < "2007-02-03 00:00:00")
 
 
-png(file = "plot2.png", bg = "transparent")
+png(file = "plot2.png",  width=480, height=480)
 par(mfrow= c(1,1))
 plot(consumo_2$date_time, consumo_2$Global_active_power, type = "n", ylab = "Global Activity Power (kilowats)", xlab = "")
 lines(consumo_2$date_time, consumo_2$Global_active_power)
